@@ -9,7 +9,7 @@
                 <div class="left-articles">
                     {{ $leftArticles := first 4 (after 3 $allArticles) }}
                     {{ range $leftArticles }}
-                    <article class="side-news-card">
+                    <article class="side-news-card clickable-card" data-href="{{ .RelPermalink }}">
                         <div class="side-news-image">
                             {{ if .Params.images }}
                             <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" class="img-fluid">
@@ -36,7 +36,7 @@
                 <div class="main-news-section">
                     {{ $mainArticle := index $allArticles 0 }}
                     {{ if $mainArticle }}
-                    <article class="main-news-article">
+                    <article class="main-news-article clickable-card" data-href="{{ $mainArticle.RelPermalink }}">
                         <div class="main-news-image">
                             {{ if $mainArticle.Params.images }}
                             <img src="{{ index $mainArticle.Params.images 0 }}" alt="{{ $mainArticle.Title }}" class="img-fluid">
@@ -58,7 +58,7 @@
                     <!-- Secondary Articles -->
                     {{ $secondaryArticles := first 2 (after 1 $allArticles) }}
                     {{ range $secondaryArticles }}
-                    <article class="secondary-news-article">
+                    <article class="secondary-news-article clickable-card" data-href="{{ .RelPermalink }}">
                         <div class="row">
                             <div class="col-md-4">
                                 <div class="secondary-news-image">
@@ -101,7 +101,7 @@
                 <div class="right-articles">
                     {{ $rightArticles := first 4 (after 7 $allArticles) }}
                     {{ range $rightArticles }}
-                    <article class="right-news-card">
+                    <article class="right-news-card clickable-card" data-href="{{ .RelPermalink }}">
                         <div class="right-news-image">
                             {{ if .Params.images }}
                             <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" class="img-fluid">
@@ -133,7 +133,7 @@
                         {{ $bottomArticles := first 8 (after 11 $allArticles) }}
                         {{ range $bottomArticles }}
                         <div class="col-lg-3 col-md-6 mb-4">
-                            <article class="bottom-news-card">
+                            <article class="bottom-news-card clickable-card" data-href="{{ .RelPermalink }}">
                                 <div class="bottom-news-image">
                                     {{ if .Params.images }}
                                     <img src="{{ index .Params.images 0 }}" alt="{{ .Title }}" class="img-fluid">

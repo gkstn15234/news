@@ -3479,6 +3479,26 @@ img {
     }
 }
 
+/* Clickable Cards */
+.clickable-card {
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.clickable-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.clickable-card:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+.clickable-card:active {
+    transform: translateY(0);
+}
+
 /* High Contrast Mode */
 @media (prefers-contrast: high) {
     :root {
