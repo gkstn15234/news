@@ -22,7 +22,11 @@
                         </div>
                         <div class="side-news-content">
                             <h3 class="side-news-title">
+                                {{ if eq .Section "automotive" }}
+                                <a href="{{ .RelPermalink }}" rel="nofollow">{{ .Title }}</a>
+                                {{ else }}
                                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                {{ end }}
                             </h3>
                             <p class="side-news-excerpt">{{ .Summary | plainify | truncate 80 }}</p>
                         </div>
@@ -49,7 +53,11 @@
                         <div class="main-news-content">
                             <span class="main-category-badge">속보</span>
                             <h1 class="main-news-title">
+                                {{ if eq $mainArticle.Section "automotive" }}
+                                <a href="{{ $mainArticle.RelPermalink }}" rel="nofollow">{{ $mainArticle.Title }}</a>
+                                {{ else }}
                                 <a href="{{ $mainArticle.RelPermalink }}">{{ $mainArticle.Title }}</a>
+                                {{ end }}
                             </h1>
                         </div>
                     </article>
@@ -75,7 +83,11 @@
                                 <div class="secondary-news-content">
                                     <span class="secondary-category-badge">{{ .Section | title }}</span>
                                     <h2 class="secondary-news-title">
+                                        {{ if eq .Section "automotive" }}
+                                        <a href="{{ .RelPermalink }}" rel="nofollow">{{ .Title }}</a>
+                                        {{ else }}
                                         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                        {{ end }}
                                     </h2>
                                     <p class="secondary-news-excerpt">{{ .Summary | plainify | truncate 150 }}</p>
                                     <div class="secondary-news-meta">
@@ -114,7 +126,11 @@
                         </div>
                         <div class="right-news-content">
                             <h3 class="right-news-title">
+                                {{ if eq .Section "automotive" }}
+                                <a href="{{ .RelPermalink }}" rel="nofollow">{{ .Title }}</a>
+                                {{ else }}
                                 <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                                {{ end }}
                             </h3>
                             <p class="right-news-excerpt">{{ .Summary | plainify | truncate 80 }}</p>
                         </div>
@@ -146,7 +162,11 @@
                                 <div class="bottom-news-content">
                                     <span class="bottom-category">{{ .Section | title }}</span>
                                     <h5 class="bottom-news-title">
+                                        {{ if eq .Section "automotive" }}
+                                        <a href="{{ .RelPermalink }}" rel="nofollow">{{ .Title | truncate 50 }}</a>
+                                        {{ else }}
                                         <a href="{{ .RelPermalink }}">{{ .Title | truncate 50 }}</a>
+                                        {{ end }}
                                     </h5>
                                     <div class="bottom-news-meta">
                                         <span class="bottom-news-date">{{ .Date.Format "01월 02일" }}</span>

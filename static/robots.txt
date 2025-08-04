@@ -1,5 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /automotive/
 
 # Sitemap URLs - Will be automatically resolved by Cloudflare Pages
 Sitemap: /sitemap.xml
